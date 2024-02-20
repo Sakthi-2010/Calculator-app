@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        margin-left: 35%;
+        margin-top: 10px;
+        height: 100vh;
+      }
+
+      #calculatorForm {
+        width: 400px;
+        height: 200px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        outline: none;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      h1 {
+        margin-bottom: 50px;
+      }
+
+      button {
+        background-color: #4caf50; /* Green background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 15px 32px; /* Some padding */
+        text-align: center; /* Centered text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Inline-block */
+        font-size: 16px; /* Standard font size */
+        margin: 4px 2px; /* Some margin */
+        cursor: pointer; /* Pointer/hand icon */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+      }
+
+      button:hover {
+        background-color: #45a049; /* Darker shade of green */
+        transform: scale(1.05); /* Slightly increase the button size */
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          margin-left: 10%;
+        }
+
+        #calculatorForm {
+          width: 300px;
+        }
+      }
+    </style>
+    <script>
+      // It's better to use window.onload or addEventListener to ensure the DOM is fully loaded
+      window.onload = function () {
+        // Now, these elements will be correctly assigned
+        const a = document.getElementById("no1");
+        const b = document.getElementById("no2");
+
+        // Define the add function correctly
+        window.add = function () {
+          // Parse the input values as floats and add them
+          const sum = parseFloat(a.value) + parseFloat(b.value);
+          document.getElementById("result").innerHTML = sum;
+        };
+
+        // Define placeholder functions for other operations
+        window.sub = function () {
+          const difference = parseFloat(a.value) - parseFloat(b.value);
+          document.getElementById("result").innerHTML = difference;
+        };
+
+        window.mul = function () {
+          const product = parseFloat(a.value) * parseFloat(b.value);
+          document.getElementById("result").innerHTML = product;
+        };
+
+        window.div = function () {
+          const quotient = parseFloat(a.value) / parseFloat(b.value);
+          document.getElementById("result").innerHTML = quotient;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple Calculator in JavaScript</h1>
+      <form id="calculatorForm">
+        <input type="number" name="" id="no1" value="Enter your number" /><br />
+        <input type="number" name="" id="no2" value="Enter your number" />
+      </form>
+      <h1 id="result"></h1>
+      <button onclick="add()">Addition</button>
+      <button onclick="sub()">Subtraction</button>
+      <button onclick="mul()">Multiplication</button>
+      <button onclick="div()">Division</button>
+    </div>
+  </body>
+</html>
