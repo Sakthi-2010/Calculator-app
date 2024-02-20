@@ -21,7 +21,7 @@
 
       #calculatorForm {
         width: 400px;
-        height: 200px;
+        height: 250px;
         background-color: #f2f2f2;
         padding: 20px;
         border-radius: 10px;
@@ -83,27 +83,27 @@
         // Now, these elements will be correctly assigned
         const a = document.getElementById("no1");
         const b = document.getElementById("no2");
-
+        const c = document.getElementById("no3")
         // Define the add function correctly
         window.add = function () {
           // Parse the input values as floats and add them
-          const sum = parseFloat(a.value) + parseFloat(b.value);
+          const sum = parseFloat(a.value) + parseFloat(b.value) + parseFloat(c.value);
           document.getElementById("result").innerHTML = sum;
         };
 
         // Define placeholder functions for other operations
         window.sub = function () {
-          const difference = parseFloat(a.value) - parseFloat(b.value);
+          const difference = parseFloat(a.value) - parseFloat(b.value) - parseFloat(c.value);
           document.getElementById("result").innerHTML = difference;
         };
 
         window.mul = function () {
-          const product = parseFloat(a.value) * parseFloat(b.value);
+          const product = parseFloat(a.value) * parseFloat(b.value) * parseFloat(c.value);
           document.getElementById("result").innerHTML = product;
         };
 
         window.div = function () {
-          const quotient = parseFloat(a.value) / parseFloat(b.value);
+          const quotient = parseFloat(a.value) / parseFloat(b.value) /  parseFloat(c.value);
           document.getElementById("result").innerHTML = quotient;
         };
       };
@@ -113,8 +113,9 @@
     <div class="container">
       <h1>Simple Calculator in JavaScript</h1>
       <form id="calculatorForm">
-        <input type="number" name="" id="no1" value="Enter your number" /><br />
-        <input type="number" name="" id="no2" value="Enter your number" />
+        <input type="number" id="no1" value="0" style="color: #b9b9b9;">
+        <input type="number" id="no2" value="0" style="color: #b9b9b9;">
+        <input type="number" id="no3" value="0"style="color: #b9b9b9;">
       </form>
       <h1 id="result"></h1>
       <button onclick="add()">Addition</button>
